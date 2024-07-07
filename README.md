@@ -17,6 +17,7 @@ To run this notebook, you need to install the `keras-tuner` library. You can ins
 
 ```bash
 pip install keras-tuner
+```
 
 ## Imports
 The notebook requires several libraries including TensorFlow, Keras utilities, and Keras Tuner for hyperparameter optimization.
