@@ -51,11 +51,13 @@ How to Run the Notebook
 2.	Run each cell in the notebook sequentially.
 3.	Monitor the training process using TensorBoard.
 4.	After training, the best model will be saved automatically.
-Note
+   
+## Note
 The notebook includes detailed markdown cells explaining each step, making it easier to follow along and understand the process of model training and hyperparameter tuning.
 Acknowledgements
 •	TensorFlow and Keras for providing the deep learning framework.
 •	Keras Tuner for enabling easy and efficient hyperparameter tuning.
 •	Fashion MNIST dataset for the data used in this notebook.
+
+
 For any questions or issues, please open an issue in this repository.
-![image](https://github.com/mohitsoni87/DTI6302---MLOps---End-to-End-Machine-Learning-Project/assets/31820911/79674986-2530-4946-8af0-6a4b1f49f09f)
