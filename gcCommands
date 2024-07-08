@@ -1,0 +1,5 @@
+gcloud builds submit --tag upload_file
+
+gcloud builds submit --tag=gcr.io/perfect-coil-428722-b1/upload_file
+
+gcloud run deploy my-backend --image=gcr.io/perfect-coil-428722-b1/upload_file --platform managed

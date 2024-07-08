@@ -1,0 +1,36 @@
+docker run -p 8501:8501 --name=cnn_model \
+    --mount type=bind,source=/Users/mohit/MyFolder/uOttawa/Summer24/DTI6302-MLOps/MLOps-E2E-Machine-Learning-Project/cnn_model,target=cnn_model \
+    -e MODEL_NAME=cnn_model -t tensorflow/serving
+
+
+
+docker run -p 8501:8501 --name=tf_serving_cnn_model \
+    --mount type=bind,source=/Users/mohit/MyFolder/uOttawa/Summer24/DTI6302-MLOps/MLOps-E2E-Machine-Learning-Project/cnn_model,target=/models/cnn_model/1 \
+    -e MODEL_NAME=cnn_model -t emacski/tensorflow-serving:latest-linux_arm64 --logdir=/logs
+
+
+
+curl -d ''
+-X POST http://localhost:8501/v1/models/cnn_model:predict
+
+URL: http://localhost:8501/v1/models/cnn_model
+
+curl -d @curlPayload.json -X POST http://localhost:8501/v1/models/cnn_model:predict
+
+#Output:
+m    
+
+
+
+Google TF:
+docker run -t --rm -p 8501:8501 \       
+    -v "$TESTDATA/saved_model_half_plus_two_cpu:/models/half_plus_two" \
+    -e MODEL_NAME=half_plus_two \
+    emacski/tensorflow-serving:latest-linux_arm64 &
+
+    curl command:   
+    curl -d '{"instances": [1.0, 2.0, 5.0]}' \
+    -X POST http://localhost:8501/v1/models/half_plus_two:predict
+
+
+    URL: http://localhost:8501/v1/models/half_plus_two
